@@ -33,3 +33,13 @@ def test_add_trabalho():
 
     assert 1 == len(sprint.trabalho)
     assert 0 == sprint.trabalho[0]
+
+
+def test_mock_trabalho():
+		sprint = Sprint()		
+		sprint.trabalho = MagicMock()
+		sprint.trabalho.__len__.return_value = 1
+		sprint.trabalho.__iter__.return_value = iter([1])
+
+		assert len(sprint.trabalho) == 1
+		assert list(sprint.trabalho) == [1]
