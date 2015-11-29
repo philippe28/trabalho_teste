@@ -6,3 +6,6 @@ class Sprint:
 
     def add_meta(self, meta):        
         self.meta.append(meta)
+
+    def add_trabalho(self, trabalho):        
+    	self.trabalho.append(trabalho)
