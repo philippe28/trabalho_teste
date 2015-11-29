@@ -1,6 +1,7 @@
 import pytest
 from mock import patch, MagicMock
 from BurnUp import Sprint
+from matplotlib import pyplot as plt
 
 def test_inicio_padrao():
     sprint = Sprint()
@@ -59,3 +60,10 @@ def test_mock_pyplot():
 	with patch('matplotlib.pyplot') as mock_pyplot:
 		mock_pyplot.show.return_value = None
 		assert mock_pyplot.show.return_value  == None
+
+def test_mudou_sprint():
+	sprint = Sprint()
+	sprint.mudar_sprint = MagicMock()
+	sprint.mudar_sprint.__int__.return_value = int(14)    
+
+	assert int(sprint.mudar_sprint) != 9
