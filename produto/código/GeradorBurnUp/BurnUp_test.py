@@ -25,3 +25,11 @@ def test_mock_meta():
 
 	assert len(sprint.meta) == 1
 	assert list(sprint.meta) == [1]
+
+
+def test_add_trabalho():
+    sprint = Sprint()
+    sprint.add_trabalho(0)
+
+    assert 1 == len(sprint.trabalho)
+    assert 0 == sprint.trabalho[0]
