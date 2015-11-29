@@ -43,3 +43,15 @@ def test_mock_trabalho():
 
 		assert len(sprint.trabalho) == 1
 		assert list(sprint.trabalho) == [1]
+
+
+def test_mock_simetria_lenght():
+	sprint = Sprint()
+	sprint.add_trabalho = MagicMock()
+	sprint.add_trabalho.__len__.return_value = 1
+	sprint.add_meta = MagicMock()
+	sprint.add_meta.__len__.return_value = 1
+
+	assert len(sprint.trabalho) == len(sprint.meta)
+
+
