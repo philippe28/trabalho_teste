@@ -1,3 +1,6 @@
+from matplotlib import pyplot as plt
+import numpy as np
+
 class Sprint:
     def __init__(self):
         self.meta = []
