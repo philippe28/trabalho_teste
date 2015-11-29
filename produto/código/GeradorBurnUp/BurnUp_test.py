@@ -55,3 +55,7 @@ def test_mock_simetria_lenght():
 	assert len(sprint.trabalho) == len(sprint.meta)
 
 
+def test_mock_pyplot():
+	with patch('matplotlib.pyplot') as mock_pyplot:
+		mock_pyplot.show.return_value = None
+		assert mock_pyplot.show.return_value  == None
